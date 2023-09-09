@@ -1,0 +1,281 @@
+/*Reset styles*/
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, #273b3c, #2b6d50);
+    height: 100vh;
+    position: relative;
+}
+
+/*Header*/
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo, .header__login {
+    padding: 0 25px;
+}
+
+.header__logo img {
+    width: 230px;
+}
+
+.header__login .btn-login {
+    width: 120px;
+    height: 37px;
+    border-radius: 28px;
+    border: none;
+    background-color: #4BB257;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .5s;
+}
+.header__login .btn-login:hover {
+    background-color: #279b34;
+}
+
+/*Main*/
+main.container {
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    /* align-items: flex-start; */
+    /*Para centralizar as três colunas na vertical usamos o valor "center" para a propriedade "align-items"*/
+    align-items: center;
+}
+
+/*Figuras*/
+.container__images {
+    border-radius: 20px;
+}
+
+.container__images {
+    margin-left: 25px;
+}
+
+.container__images__content {
+    background-color: #f7f7f7;
+    padding: 15px 15px 12px 15px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr auto;
+    gap: 10px;
+}
+
+.container__images__item {
+    position: relative;
+    cursor:pointer;
+}
+
+.container__images__item img {
+    width: 100%;
+    /*A propriedade "max-width" é para garantir que a imagem não seja maior que um tamanho específico*/
+    /*max-width: 250px;*/
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.container__images__item h4 {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, .35);
+    padding: 1px 4px;
+    border-radius: 5px;
+    font-size: 11.5px;
+    color: #ffffff;
+}
+
+.container__images__btn {
+    width: 90px;
+    height: 25px;
+    margin-top: -5px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4BB257;
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all .5s;
+}
+.container__images__btn:hover {
+    background-color: #279b34;
+}
+
+/*Portal*/
+.container__portal {
+    display: flex;
+    flex-direction: column;
+    /*Quando muda "flex-direction" para "column", a propriedade "align-items" passa a fazer o controle dos elementos filhos na horizontal*/
+    align-items: center;
+    row-gap: .6rem;
+}
+
+.container__portal__image img {
+    width: 100%;
+    /*Para centralizar elementos na horizontal também podemos usar "margin: 0 auto"*/
+    margin: 0 auto;
+    max-width: 330px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.container__portal__link {
+    width: 150px;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 14px;
+    background-color: #4BB257;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    /*Também pode usar Flexbox para centralizar elementos, mesmo que estes não tenham nenhum elemento filho*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+.container__portal__link:hover {
+    background-color: #279b34;
+}
+
+/*Aviso*/
+.container__notice {
+    margin-right: 25px;
+}
+
+.container__notice__content {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 2px 6px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container__notice__title {
+    color: #4BB257;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 10px 0 2px 0;
+}
+
+/*Footer*/
+footer {
+    margin: calc(40px + 5vw) 0 10px 0;
+    text-align: center;
+    color: #f7f7f7;
+    font-family: 'Poppins', sans-serif;
+    font-size: .9rem;
+
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer span i {
+    margin-right: 3px;
+}
+
+/*Media Queries*/
+@media(max-width: 1100px) {
+    body {    
+        height: auto;
+        padding-bottom: 80px;
+    }
+
+    main.container {
+        /* padding: 10px 0 25px 0; */
+        padding: 10px 0 0 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr auto;
+        gap: 70px 20px;
+    }
+
+    .container__portal__image img {
+        max-width: 310px;
+    }
+
+    .container__notice {
+        width: 100%;
+        margin: 0 auto;
+        transform: translateX(50%);
+    }
+}
+
+@media(max-width: 800px) {
+    main.container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr;
+        gap: 40px 20px;
+    }
+
+    .container__images {
+        margin-left: 0px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .container__images__item img {
+        max-width: 100%;
+    }
+
+    .container__portal {
+        order: -1;
+    }
+
+    .container__portal__image img {
+        max-width: 290px;
+    }
+
+    .container__notice {
+        width: 80%;
+        margin: 0 auto;
+        transform: translateX(0%);
+    }
+}
+
+@media(max-width: 500px) {
+    .header__logo img {
+        width: 180px;
+    }
+
+    .container__portal__link {
+        width: 130px;
+        height: 35px;
+    }
+    
+    .header__login .btn-login {
+        width: 90px;
+        height: 28px;
+    }
+}
