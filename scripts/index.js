@@ -14,3 +14,14 @@ if(figureList.length > 0) {
         });
     });
 }
+
+const buttonSeeAll = document.querySelector(".container__images__btn");
+buttonSeeAll.addEventListener("click", (e) => {
+    console.log(e.target, e.target.getAttribute('data-url'));    
+    const url = e.target.getAttribute('data-url');
+    
+    if(url.match(/^http/) instanceof Array) {
+        // window.location.href = url;
+        window.open(url, '_blank');
+    }
+});

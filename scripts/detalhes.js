@@ -2,6 +2,7 @@ const urlPage = localStorage.getItem(keyPage);
 const jsonContainerElement = document.querySelector('.json-content');
 const titleElement = document.querySelector('.title');
 // const imgElement = document.createElement('img');
+const windowWidth = window.outerWidth;
 
 if(jsonContainerElement instanceof HTMLElement === false) {
     throw 'Isto não é uma tag html';
@@ -30,6 +31,10 @@ fetch(urlPage, {
         let text = JSON.stringify(json);
         // text = text.replace(/,/g, "<br>, ");
         text = text.replace(/,/g, ", ");
+
+        if(windowWidth < 700) {
+            text = text.replace(/,/g, "<br>, ");
+        }
 
         jsonContainerElement.innerHTML = text;
     })

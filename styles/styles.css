@@ -86,7 +86,7 @@ main.container {
 
 .container__images__item {
     position: relative;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .container__images__item img {
